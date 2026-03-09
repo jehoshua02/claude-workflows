@@ -20,14 +20,14 @@ collect-ideas → evaluate-ideas → select-idea → create-implementation-plan 
 ## Install
 
 ```bash
-git clone git@github.com:LendioDevs/claude-workflows.git ~/claude-workflows
-~/claude-workflows/install.sh
+git clone git@github.com:LendioDevs/claude-workflows.git ~/dev/lendio-infra/repositories/claude-workflows
+~/dev/lendio-infra/repositories/claude-workflows/install.sh
 ```
 
 ## Update
 
 ```bash
-cd ~/claude-workflows && git pull
+cd ~/dev/lendio-infra/repositories/claude-workflows && git pull
 ```
 
 Commands are symlinked, so `git pull` updates them everywhere automatically.
