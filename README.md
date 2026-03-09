@@ -10,11 +10,12 @@ Shared Claude Code workflow commands for the ideation-to-implementation lifecycl
 | `/workflow:evaluate-ideas` | Score ideas against criteria, generate ranked summary |
 | `/workflow:select-idea` | Collect team picks, AI recommendation, finalize selection |
 | `/workflow:create-implementation-plan` | Detailed code-unit-level implementation plan from a scope doc |
+| `/workflow:tdd` | TDD a code unit from a spec with strict RED/GREEN/REFACTOR cycle |
 
 These extend the existing planning workflow:
 
 ```
-collect-ideas → evaluate-ideas → select-idea → create-implementation-plan → plan-feature → implement-feature → ...
+collect-ideas → evaluate-ideas → select-idea → create-implementation-plan → tdd → ...
 ```
 
 ## Install
