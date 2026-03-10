@@ -49,15 +49,17 @@ Summarize findings before proceeding.
 
 ### 3. Define Code Units
 
-Break the feature into discrete code units. A code unit is a single class, function, migration, config change, or test file.
+Break the feature into discrete code units. A code unit is a single class, function, migration, config change, etc.
+
+**Test files are NOT separate code units.** Each code unit includes a `Test Cases` section — the corresponding test file is created implicitly during implementation. Do not list test files as standalone units.
 
 For each code unit, document:
 
 ```markdown
-### {slice}.{unit} {UnitName}
+### 3.{slice}.{unit} {UnitName}
 
 **Project:** {project name}
-**Type:** {Controller | Service | Repository | Model | Migration | Job | Policy | Resource | Test | Config | Route | Component | etc.}
+**Type:** {Controller | Service | Repository | Model | Migration | Job | Policy | Resource | Config | Route | Component | etc.}
 **File:** `{path/to/file}`
 
 **Purpose:** {One sentence — what this unit does}
@@ -87,18 +89,22 @@ For each code unit, document:
 Group code units into logical, independently shippable slices:
 
 ```markdown
-## 1. Slice: {Name}
+## 3.1 Slice 1: {Name}
 
 {Brief description — what this slice delivers}
 
-### 1.1 {FirstCodeUnit}
+### 3.1.1 {FirstCodeUnit}
 ...
-### 1.2 {SecondCodeUnit}
+### 3.1.2 {SecondCodeUnit}
 ...
 
-## 2. Slice: {Name}
+## 3.2 Slice 2: {Name}
+
+### 3.2.1 {FirstCodeUnit}
 ...
 ```
+
+**Numbering:** Use fully qualified section numbers. Code units under Slice 1 (section 3.1) are numbered 3.1.1, 3.1.2, etc. Code units under Slice 2 (section 3.2) are numbered 3.2.1, 3.2.2, etc.
 
 **Slice principles:**
 - Each slice should be independently testable and deployable
