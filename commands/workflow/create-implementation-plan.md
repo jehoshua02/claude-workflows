@@ -49,7 +49,9 @@ Summarize findings before proceeding.
 
 ### 3. Define Code Units
 
-Break the feature into discrete code units. A code unit is a single class, function, migration, config change, etc.
+Break the feature into discrete code units. A code unit is a single **method**, migration, config change, etc. — NOT an entire class.
+
+**Granularity:** If a class has multiple public methods, each method is its own code unit. This ensures each unit has focused inputs/outputs, clear test cases, and can be TDD'd independently. Group related method units under a shared heading for the class file they belong to.
 
 **Test files are NOT separate code units.** Each code unit includes a `Test Cases` section — the corresponding test file is created implicitly during implementation. Do not list test files as standalone units.
 
