@@ -62,7 +62,7 @@ For each code unit, document:
 
 **Project:** {project name}
 **Type:** {Controller | Service | Repository | Model | Migration | Job | Policy | Resource | Config | Route | Component | etc.}
-**File:** `{path/to/file}`
+**File:** `{full/path/to/FileName.ext}`
 
 **Purpose:** {One sentence — what this unit does}
 
@@ -179,6 +179,7 @@ Print:
 
 - Use structured numbering throughout (1.1, 1.2, 2.1, etc.)
 - Every code unit must have all fields filled in (no "TBD" or empty sections)
+- Every code unit must include a full file path (e.g., `app/Jobs/LenderApplicationPublish/FireLenderNotificationsJob.php`, not just a class name). For new files, research existing conventions to determine the correct directory.
 - Every code unit must be tagged with its project
 - Test cases should cover happy path, edge cases, and error cases
 - Reference existing code by project and file path — don't reinvent what exists
