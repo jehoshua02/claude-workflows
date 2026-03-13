@@ -45,9 +45,11 @@ Capture and investigate a question, documenting the research process — evidenc
 
 ## 2. Relevant Information
 
-## 3. Observations
+## 3. Queries
 
-## 4. Conclusion
+## 4. Observations
+
+## 5. Conclusion
 
 ```
 
@@ -58,9 +60,13 @@ Capture and investigate a question, documenting the research process — evidenc
    - Use fully qualified numbering: `### 2.1 {Finding title}`, `### 2.2 {Finding title}`, etc.
    - Each finding should include the evidence (SQL query + results, code snippet + file path, link, data table, etc.)
    - Sub-findings within a finding use deeper numbering: `#### 2.1.1`, `#### 2.1.2`, etc.
-3.3. Update **Observations** (`### 3.1`, `### 3.2`, etc.) with patterns, anomalies, or insights as they emerge. Reference findings by number (e.g., "Based on 2.1 and 2.3...").
-3.4. Update the file after each meaningful finding so progress is preserved if the session ends. Replace placeholder sections entirely — do not leave empty sections alongside content.
-3.5. Aim for at least 2-3 distinct findings before moving to review. After each pass, update the **Research depth** field:
+3.3. If the investigation involves data queries (SQL, API calls, log searches, etc.), add reusable queries to the **Queries** section (`### 3.1 {Query title}`, etc.):
+   - Add a brief description of what the query finds and its use case (replay, monitoring, dashboards)
+   - Use fenced code blocks with the appropriate language tag (e.g., ```sql)
+   - Parameterize where sensible (e.g., time windows) and add comments explaining non-obvious filters
+3.4. Update **Observations** (`### 4.1`, `### 4.2`, etc.) with patterns, anomalies, or insights as they emerge. Reference findings by number (e.g., "Based on 2.1 and 2.3...").
+3.5. Update the file after each meaningful finding so progress is preserved if the session ends. Replace placeholder sections entirely — do not leave empty sections alongside content.
+3.6. Aim for at least 2-3 distinct findings before moving to review. After each pass, update the **Research depth** field:
    - `shallow` — 1-2 findings, single data source, surface-level
    - `moderate` — 3-5 findings, multiple sources or angles
    - `thorough` — 6+ findings, cross-referenced, edge cases explored
@@ -78,13 +84,13 @@ Capture and investigate a question, documenting the research process — evidenc
 ### 5. Conclude
 
 5.1. Synthesize observations into a conclusion
-5.2. Update the **Conclusion** section (`### 4.1`, `### 4.2`, etc.) with:
+5.2. Update the **Conclusion** section (`### 5.1`, `### 5.2`, etc.) with:
    - A direct answer to the question
    - Confidence level (high / medium / low)
    - Any caveats or open threads
-   - If research was cut short, note what areas remain unexplored under `### 4.x Open threads`
+   - If research was cut short, note what areas remain unexplored under `### 5.x Open threads`
 5.3. If the file was saved to `~/.claude/memory/questions/`, check for a `MEMORY.md` in the same memory directory:
    - If `MEMORY.md` doesn't exist, create it with a `## Questions` section
    - If it exists but has no `## Questions` section, add one
    - Append a reference: `- [{slug}](questions/{filename}) — {one-line summary of conclusion}`
-5.4. Print the file path and a brief summary to the user
+5.4. Copy the file path to the clipboard (e.g., `echo -n "{path}" | pbcopy`) and print the file path and a brief summary to the user
