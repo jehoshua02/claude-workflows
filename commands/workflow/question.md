@@ -19,11 +19,7 @@ Capture and investigate a question, documenting the research process — evidenc
 
 1.1. If `$ARGUMENTS` contains a clear question, use it and skip to 1.3
 1.2. Otherwise, ask the user: "What question are you investigating?" using AskUserQuestion
-1.3. Ask where to save the question file using AskUserQuestion:
-   - Option: `~/.claude/memory/questions/` — persists across sessions, accessible to Claude's memory
-   - Option: `./questions/` — saved in the current working directory
-   - Option: "Other (I'll specify)"
-1.4. Create the folder if it doesn't exist
+1.3. Save the question file to `~/questions/`. Create the folder if it doesn't exist.
 
 ### 2. Create the Question File
 
@@ -89,8 +85,4 @@ Capture and investigate a question, documenting the research process — evidenc
    - Confidence level (high / medium / low)
    - Any caveats or open threads
    - If research was cut short, note what areas remain unexplored under `### 5.x Open threads`
-5.3. If the file was saved to `~/.claude/memory/questions/`, check for a `MEMORY.md` in the same memory directory:
-   - If `MEMORY.md` doesn't exist, create it with a `## Questions` section
-   - If it exists but has no `## Questions` section, add one
-   - Append a reference: `- [{slug}](questions/{filename}) — {one-line summary of conclusion}`
-5.4. Copy the file path to the clipboard (e.g., `echo -n "{path}" | pbcopy`) and print the file path and a brief summary to the user
+5.3. Copy the file path to the clipboard (e.g., `echo -n "{path}" | pbcopy`) and print the file path and a brief summary to the user
